@@ -1,0 +1,36 @@
+// 1. 計算2的10次方
+console.log(Math.pow(2, 10)); // 1024
+
+// 2. 計算 100 取餘 7 的結果。
+console.log(100 % 7); // 2
+
+// 3. 計算 10 階乘的結果（使用迴圈）。
+let factorial = 1;
+for(let i = 1; i <= 10; i++) {
+    factorial *= i;
+}
+console.log(factorial); // 3628800
+
+// 4. 將 “你好” 字串重複拼接成長度 * 10。
+console.log("你好".repeat(10));
+
+// 5. 判斷 “hello” 字串中是否包含 “7”。
+console.log("hello".includes("7")); // false
+
+// 6. 判斷 “hello” 字串中是否包含 “world” 字串或者數字。
+console.log("hello".includes("world") || /\d/.test("hello")); // false
+
+// 7. 計算 123 的平方根的整數部分。
+console.log(Math.floor(Math.sqrt(123))); // 11
+
+// 8. 判斷變量 x 是否等於 y。如果相等返回 true；否則返回 false。
+let x, y; // 假設 x 和 y 已經被賦值
+console.log(x === y);
+
+// 9. 判斷變量 15 是否在 [0,10] 和 [20,30] 區間內。若滿足 true；否則返回 false。
+let number = 15;
+console.log((number >= 0 && number <= 10) || (number >= 20 && number <= 30)); // false
+
+// 10. 判斷變量 “hello” 是否是字符串型且不是 undefined，若是返回 true；否則返回 false
+let variable = "hello";
+console.log(typeof variable === 'string' && variable !== undefined); // true

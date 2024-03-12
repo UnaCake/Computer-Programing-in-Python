@@ -1,0 +1,88 @@
+// (1) 提示使用者輸入一個年份，判斷這個年份是否為閏年。若這個年份能被4整除但不能被100整除，或者能被400整除，就是閏年，否則不是閏年。
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+// (2)提示使用者輸入一個月份，然後輸出這個月份所對應的天數。若輸入的是1、3、5、7、8、10或12月，就輸出「31天」；若输入的是4、6、9或11月，就輸出「30天」；若輸入的是2月，就輸出「28天」或「29天」，需要考慮閏年的情況。
+function daysInMonth(month, year) {
+  if (month === 2) {
+    return isLeapYear(year) ? '29天' : '28天';
+  } else if ([1, 3, 5, 7, 8, 10, 12].includes(month)) {
+    return '31天';
+  } else {
+    return '30天';
+  }
+}
+
+// (3) 提示使用者輸入一個字串，然後使用for迴圈將字串反轉。
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+// (4) 使用for迴圈印出由"*"組成的倒直角三角形。
+function printTriangle(rows) {
+  for (let i = rows; i > 0; i--) {
+    console.log('*'.repeat(i));
+  }
+}
+
+// (5) 使用while迴圈判斷一個數否為質數。
+function isPrime(number) {
+  if (number <= 1) return false;
+  let i = 2;
+  while (i * i <= number) {
+    if (number % i === 0) return false;
+    i++;
+  }
+  return true;
+}
+
+// (6) 使用while迴圈印出由組成的直角三角形。
+function printRightTriangle(rows) {
+  let i = 1;
+  while (i <= rows) {
+    console.log('*'.repeat(i));
+    i++;
+  }
+}
+
+// (7) 輸入一個正整數n，使用do...while迴圈計算 n! 的值（即n的階乘），輸出結果。
+function factorial(n) {
+  let result = 1;
+  do {
+    result *= n;
+    n--;
+  } while (n > 0);
+  return result;
+}
+
+// (8)使用for...of迴圈找出陣列中的最大值，假設陣列為[1,5,2,7,3]。
+function findMax(array) {
+  let max = array[0];
+  for (let element of array) {
+    if (element > max) max = element;
+  }
+  return max;
+}
+
+// (9)使用for...of迴圈計算陣列中所有偶數元素的總和，假設陣列為[1,2,3,4,5,6,7,8]。
+function sumEvenNumbers(array) {
+  let sum = 0;
+  for (let element of array) {
+    if (element % 2 === 0) sum += element;
+  }
+  return sum;
+}
+
+// (10)使用for...in迴圈計算物件中屬性值的總和，假設物件為{a:1,b:2,c:3,d:4,e:5}。
+function sumObjectValues(obj) {
+  let sum = 0;
+  for (let key in obj) {
+    sum += obj[key];
+  }
+  return sum;
+}
