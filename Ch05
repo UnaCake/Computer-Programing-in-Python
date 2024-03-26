@@ -1,0 +1,57 @@
+// ch05 ex1
+//(1) 寫一個函式用來計算任意數量數字的平均值。
+
+function calculateAverage(...numbers) {
+  const sum = numbers.reduce((acc, val) => acc + val, 0);
+  return sum / numbers.length;
+}
+
+//(2) 寫一個函式用來檢查一個數字是否為質數。
+
+function isPrime(number) {
+  if (number <= 1) return false;
+  if (number <= 3) return true;
+
+  if (number % 2 === 0 || number % 3 === 0) return false;
+
+  for (let i = 5; i * i <= number; i += 6) {
+    if (number % i === 0 || number % (i + 2) === 0) return false;
+  }
+  return true;
+}
+
+//(3) 寫一個函式用來將一個數字轉換為其二進位表示法的字串。
+
+function toBinaryString(number) {
+  return number.toString(2);
+}
+
+//(4) 寫一個函式用來找出陣列中的最小值和最大值。
+
+function findMinMax(array) {
+  return {
+    min: Math.min(...array),
+    max: Math.max(...array)
+  };
+}
+
+// ch05 ex2
+//(1) 寫一個遞迴函式用來計算費式數列中的第n項
+
+function fibonacci(n) {
+  if (n <= 1) {
+    return n;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+
+//(2) 寫一個遞迴函式用來計算兩個正整數的最大公因數(GCD)
+
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
+  } else {
+    return gcd(b, a % b);
+  }
+}
