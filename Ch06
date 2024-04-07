@@ -8,7 +8,7 @@ function daysFromNow(date) {
   return Math.floor(difference / (1000 * 60 * 60 * 24));
 }
 
-//(2) (寫一個函式用來將一個字串反轉)
+//(2) 寫一個函式用來將一個字串反轉
 
 function reverseString(str) {
   return str.split('').reverse().join('');
